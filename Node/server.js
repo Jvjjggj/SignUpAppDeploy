@@ -12,7 +12,9 @@ mongoose.connect("mongodb+srv://Jak:Sjakeer201@cluster0.5y48ina.mongodb.net/?ret
 
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    ({origin:[""],methods:["POST","GET"],credentials:true})
+))
 
 
 app.post("/p",async(req,res)=>{
