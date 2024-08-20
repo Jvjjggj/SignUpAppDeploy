@@ -33,7 +33,12 @@ export default class SignUp extends Component {
 
         const response=await fetch("http://localhost:3008/register",options)
         const data=await response.json()
-        console.log(data)
+        if(data.status==="ok"){
+          alert("Register Succussfully")
+        }
+        else{
+          alert(data.status)
+        }
     }
 
   render() {

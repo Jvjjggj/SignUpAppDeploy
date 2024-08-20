@@ -75,7 +75,6 @@ app.post("/user-details",async(req,res)=>{
     try {
         const userVerify=jwt.verify(token,jwtSecreteKey)
         const email=userVerify.email
-        console.log(userVerify)
         user.findOne({email}).then((data)=>{
             res.send({status:"ok",data:data})
         })
